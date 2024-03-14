@@ -1,0 +1,10 @@
+<main class="main">
+  <app-crud-part2
+    [listData]="listData"
+    (onAddData)="handleAdd($event)"
+    (onDelete)="handleDelete($event)"
+    (onUpdate)="handleUpdate($event)"
+  ></app-crud-part2>
+</main>
+
+<router-outlet></router-outlet>
