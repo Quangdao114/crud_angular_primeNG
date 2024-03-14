@@ -1,0 +1,51 @@
+<!--
+<p>crud-part2 works!</p>
+<main class="main">
+    <table>
+     <thead>
+       <tr>
+         <th>name</th>
+         <th>age</th>
+         <th>address</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let item of listData; index as i">
+         <td>{{item['name']}}</td>
+         <td>{{item.age}}</td>             <!-- chỗ này có 2 kiểu viết  -->
+<!-- <td>{{item.address}}</td>
+         <td></td>
+       </tr>
+     </tbody>
+    </table>
+   </main>
+   <p-button label="Click me"></p-button>  
+   -->
+  
+   <span>Name</span>
+  <input [(ngModel)]="iUser.name"/>
+  <span>Age</span>
+  <input [(ngModel)]="iUser.age"/>
+  <span>Address</span>
+  <input [(ngModel)]="iUser.address"/>
+   <button (click)="addUser()">Them</button>
+   <button (click)="updateUser()">Update</button>
+
+<p-table [value]="listData" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>name</th>
+      <th>age</th>
+      <th>address</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-item>
+    <tr>
+      <td>{{ item["name"] }}</td>
+      <td>{{ item.age }}</td>       <!-- chỗ này có 2 kiểu viết  -->
+      <td>{{ item.address }}</td>
+      <p-button (onClick)="edit(item)">Sửa</p-button>
+      <p-button (onClick)="deleteData(item)">Xóa</p-button>
+    </tr>
+  </ng-template>
+</p-table>
